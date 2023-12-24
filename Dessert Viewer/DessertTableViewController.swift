@@ -9,9 +9,15 @@ import UIKit
 
 class DessertTableViewController: UITableViewController {
 
+    var desserts : [[String:Any]]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadDesserts()
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -19,27 +25,77 @@ class DessertTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    
+    func loadDesserts() {
+        
+        guard let url = URL(string: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert") else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            do {
+                // make sure this JSON is in the format we expect
+                // convert data to json
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
+                    print(json)
+                    // try to read out a dictionary
+                    if let meals = json["meals"] as? [[String:Any]] {
+                        self.desserts = meals
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            } catch let error as NSError {
+                print("Failed to load: \(error.localizedDescription)")
+            }
+            
+        }
+        
+        task.resume()
+        
+    }
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return desserts?.count ?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        let dessert = self.desserts?[indexPath.row]
+        cell.textLabel?.text = dessert!["strMeal"] as? String
+        cell.accessoryType = .disclosureIndicator
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDessertDetail", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! DessertDetailViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let dessert = self.desserts?[indexPath.row]
+            destinationVC.selectedDessert = dessert!["idMeal"]
+            print(dessert!["idMeal"]!)
+            //destinationVC.selectedDream = dreams?.sorted(by: \.category)[indexPath.row]
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

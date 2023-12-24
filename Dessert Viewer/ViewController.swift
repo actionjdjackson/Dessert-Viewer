@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func showDessertsList(_ sender: UIButton) {
+        performSegue(withIdentifier: "showDessertList", sender: self)
+    }
+    
 }
 
