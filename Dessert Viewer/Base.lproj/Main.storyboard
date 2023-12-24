@@ -19,6 +19,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="LYj-uv-9rP"/>
+                    <connections>
+                        <segue destination="v1g-nX-2kJ" kind="show" identifier="showDessertList" id="ddq-QX-SKm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,6 +50,10 @@
                             <outlet property="delegate" destination="v1g-nX-2kJ" id="K4j-Ii-PFy"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="QDp-Jj-bzz"/>
+                    <connections>
+                        <segue destination="KYC-4r-Vhh" kind="show" identifier="showDessertDetail" id="3tN-2d-hEV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuM-ac-Lv2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,6 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="oq0-d9-cTK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="U65-EF-0r2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CX6-Fc-dEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
