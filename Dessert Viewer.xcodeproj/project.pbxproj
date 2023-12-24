@@ -13,6 +13,8 @@
 		E2A79FBF2B37B14500095759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A79FBD2B37B14500095759 /* Main.storyboard */; };
 		E2A79FC12B37B14700095759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A79FC02B37B14700095759 /* Assets.xcassets */; };
 		E2A79FC42B37B14700095759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A79FC22B37B14700095759 /* LaunchScreen.storyboard */; };
+		E2A79FCC2B37B6DC00095759 /* DessertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A79FCB2B37B6DC00095759 /* DessertTableViewController.swift */; };
+		E2A79FCE2B37B70600095759 /* DessertDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A79FCD2B37B70600095759 /* DessertDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		E2A79FC02B37B14700095759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2A79FC32B37B14700095759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2A79FC52B37B14700095759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2A79FCB2B37B6DC00095759 /* DessertTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertTableViewController.swift; sourceTree = "<group>"; };
+		E2A79FCD2B37B70600095759 /* DessertDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				E2A79FB72B37B14500095759 /* AppDelegate.swift */,
 				E2A79FB92B37B14500095759 /* SceneDelegate.swift */,
 				E2A79FBB2B37B14500095759 /* ViewController.swift */,
+				E2A79FCB2B37B6DC00095759 /* DessertTableViewController.swift */,
+				E2A79FCD2B37B70600095759 /* DessertDetailViewController.swift */,
 				E2A79FBD2B37B14500095759 /* Main.storyboard */,
 				E2A79FC02B37B14700095759 /* Assets.xcassets */,
 				E2A79FC22B37B14700095759 /* LaunchScreen.storyboard */,
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A79FCC2B37B6DC00095759 /* DessertTableViewController.swift in Sources */,
 				E2A79FBC2B37B14500095759 /* ViewController.swift in Sources */,
 				E2A79FB82B37B14500095759 /* AppDelegate.swift in Sources */,
 				E2A79FBA2B37B14500095759 /* SceneDelegate.swift in Sources */,
+				E2A79FCE2B37B70600095759 /* DessertDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

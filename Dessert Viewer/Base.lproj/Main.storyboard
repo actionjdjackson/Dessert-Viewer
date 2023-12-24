@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="918.32061068702285" y="3.5211267605633805"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Dessert Table View Controller-->
         <scene sceneID="Wee-DJ-OVr">
             <objects>
-                <tableViewController id="v1g-nX-2kJ" sceneMemberID="viewController">
+                <tableViewController id="v1g-nX-2kJ" customClass="DessertTableViewController" customModule="Dessert_Viewer" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="BW4-u9-XdU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
