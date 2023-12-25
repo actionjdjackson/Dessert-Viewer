@@ -52,22 +52,26 @@ class DessertDetailViewController: UIViewController {
             guard let data = data, error == nil else { return }
             
             do {
-                // make sure this JSON is in the format we expect
-                // convert data to json
-                //print("\(self.selectedDessert ?? 0)")
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
-                    print(json)
-                    // try to read out a dictionary
+            
                     if let details = json["meals"] as? [[String:Any]] {
                         let firstDetails = details[0]
-                        self.dessertName = firstDetails["strMeal"] as? String
-                        self.dessertInstructions = firstDetails["strInstructions"] as? String
-                        for n in Range(1...20) {
-                            self.ingredientsList.append(firstDetails["strIngredient\(n)"] as? String ?? "")
-                            self.measurementsList.append(firstDetails["strMeasure\(n)"] as? String ?? "")
-                        }
-                        DispatchQueue.main.async {
-                            self.displayDetails()
+                        if let name = firstDetails["strMeal"] as? String {
+                            self.dessertName = name
+                            if let instructions = firstDetails["strInstructions"] as? String {
+                                self.dessertInstructions = instructions
+                                for n in Range(1...20) {
+                                    self.ingredientsList.append(firstDetails["strIngredient\(n)"] as? String ?? "")
+                                    self.measurementsList.append(firstDetails["strMeasure\(n)"] as? String ?? "")
+                                }
+                                DispatchQueue.main.async {
+                                    self.displayDetails()
+                                }
+                            } else {
+                                self.dessertInstructions = "Sorry, no recipe instructions were found."
+                            }
+                        } else {
+                            self.dessertName = "Sorry, no recipe name was found."
                         }
                     }
                 }
