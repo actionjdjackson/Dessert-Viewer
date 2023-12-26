@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    // Only thing this does is allow you to press a button to see the desserts list
     @IBAction func showDessertsList(_ sender: UIButton) {
         performSegue(withIdentifier: "showDessertList", sender: self)
     }
