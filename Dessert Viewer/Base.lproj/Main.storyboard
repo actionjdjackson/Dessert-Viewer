@@ -384,7 +384,6 @@
                                                 <viewLayoutGuide key="safeArea" id="2kG-iU-TyO"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="y9B-mA-fdO" secondAttribute="bottom" constant="8" id="2nt-uV-uNN"/>
                                             <constraint firstItem="UbT-gj-QP6" firstAttribute="top" secondItem="dkT-ou-gE4" secondAttribute="bottom" constant="8" id="8q4-dn-Hzz"/>
@@ -493,9 +492,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
