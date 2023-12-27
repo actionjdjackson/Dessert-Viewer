@@ -1,6 +1,6 @@
 # Showing Desserts & Dessert Details with Dessert-Viewer
 
-Swift Code Exercise for Fetch
+Swift Code Exercise for Fetch - Using UIKit, but definitely interested in learning SwiftUI!
 
 ## Prerequisites
 
